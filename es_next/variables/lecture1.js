@@ -32,7 +32,17 @@ const z = 2;
 if (true) {
   var x = 6;
 }
-console.log(x); // output: 6 not 0 and we redeclare x variable
+// console.log(x); // output: 6 not 0 and we redeclare x variable
+
+function showVar() {
+  var x = 9;
+  console.log('Var iz funkcije je ' + x);
+}
+// console.log('Var van funkcije je ' + x);
+// showVar();
+
+var b; // ovo je samo deklaracija varijable (levo od =). Output: undefined.
+var e = 6; // ovo je dodeljivanje vrednosti (assigning, tj. desno od =).
 
 // ES6 introduced the let keyword, which allows for block-scoped variables which cannot be hoisted or redeclared.
 // let y; // output error: SyntaxError: Identifier 'y' has already been declared
@@ -45,13 +55,13 @@ console.log(x); // output: 6 not 0 and we redeclare x variable
 // example of hoisting: 
 
 // The code we wrote
-// console.log(username); // output: undefined
+console.log(username); // output: undefined
 var username = 'veljko';
 
 // How JavaScript interpreted it
-var username;
+// var username;
 // console.log(username);
-username = 'veljko';
+// username = 'veljko';
 
 
 // no hoisting with let and const:

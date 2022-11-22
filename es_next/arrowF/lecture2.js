@@ -8,6 +8,7 @@ function namedFn() {
 let functionExpression = function named() {
   console.log('hello word');
 }
+// functionExpression();
 
 // 3. anonymous function declaration and expression
 let functionExpression2 = function () {
