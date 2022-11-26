@@ -2,7 +2,16 @@
 
 // ES5: callback 
 /**
- * Resources: https://betterprogramming.pub/3-ways-to-write-asynchronous-code-in-javascript-b8d17e60df06
+ * Resources: 
+ * https://betterprogramming.pub/3-ways-to-write-asynchronous-code-in-javascript-b8d17e60df06
+ * https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+ * 
+ * Event loop: https://www.geeksforgeeks.org/what-is-an-event-loop-in-javascript/
+ * Callbacks: https://www.geeksforgeeks.org/javascript-callbacks/?ref=lbp
+ * Promises: https://www.geeksforgeeks.org/javascript-promises/?ref=gcse
+ * https://www.geeksforgeeks.org/es6-promises/?ref=lbp
+ * Async/Await: https://www.geeksforgeeks.org/async-await-function-in-javascript/?ref=lbp
  */
 
 // ES6 Promise, ES7 Async/Await 
