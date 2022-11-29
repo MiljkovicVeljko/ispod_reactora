@@ -39,15 +39,26 @@ display(futureData)
 
 console.log('sync code here');
 
-root.addEventListener('load', futureData)
+// root.addEventListener('load', getPosts)
 
 // FETCH example
 
-function getPosts() {
-  fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(response => response.json())
-    .then(json => console.log(json))
+// function getPosts() {
+//   fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then(response => response.json())
+//     .then(json => console.log(json))
+// }
+
+// async version
+
+async function getPosts() {
+  let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  let responseJSON = await response.json();
+  console.log(responseJSON);
+    
 }
+getPosts();
+
 
 function getPost(id) {
   fetch(`https://jsonplaceholder.typicode.com/todos/2`)

@@ -94,19 +94,24 @@
 //   console.log(content);
 // }
 
-let promiseObj = new Promise((resolve, reject) => {
-  let x = 0;
-  if (x === 0) {
-      resolve("Granted!");
-  } else {
-      reject("DECLINED!!!");
-  }
-});
-promiseObj.then((value) => {
-  displayFunc(value);
-}, (error) => {
-  displayFunc(error);
-});
+// let promiseObj = new Promise((resolve, reject) => {
+//   let x = 0;
+//   if (x === 0) {
+//     setTimeout(() => {
+//       resolve("Granted!");
+//     }, 1000)
+//   } else {
+//     setTimeout(() => {
+//       reject("DECLINED!!!");
+//     }, 1000)
+//   }
+// });
+// console.log(promiseObj);
+// promiseObj.then((value) => {
+//   displayFunc(value);
+// }, (error) => {
+//   displayFunc(error);
+// });
 
 // //
 
@@ -117,13 +122,13 @@ promiseObj.then((value) => {
 // let doFirst = new Promise((resolve, reject) => {
 //   setTimeout(() => {
 //     console.log('Do first.')
-
-//     resolve()
+//     reject('greska')
+//     // resolve()
 //   }, 500)
 // })
 
-// doFirst.then(doSecond)
-
+// doFirst.then(doSecond).catch(err => console.error(err));
+// console.log(doFirst);
 //
 
 // (() => {
@@ -146,15 +151,15 @@ promiseObj.then((value) => {
 
 //
 
-async function displayFunc() {
-  let promiseObj = new Promise(function (resolve, reject) {
-      setTimeout(function () {
-          // resolve("Was called after f****** 4 seconds!");
-          reject('eerororor')
-      }, 1000);
-  });
-  console.log(await promiseObj.catch(e => e));
-}
+// async function displayFunc() {
+//   let promiseObj = new Promise(function (resolve, reject) {
+//       setTimeout(function () {
+//           // resolve("Was called after f****** 4 seconds!");
+//           reject('eerororor')
+//       }, 1000);
+//   });
+//   console.log(await promiseObj.catch(error => console.error(error)));
+// }
 
 // let promiseObj = new Promise(function (resolve, reject) {
 //   setTimeout(function () {
@@ -165,11 +170,20 @@ async function displayFunc() {
 // promiseObj.then(res => {
 //   console.log('res: ', res);
 // })
-
 // displayFunc();
+
+
+
 
 // "this is the start"
 // "this is just a message"
 // "this is the end"
 // "Callback 1: this is a msg from call back"
 // "Callback 2: this is a msg from call back"
+
+const getData = async() => {
+  var data = "Hello World";
+  return data;
+}
+console.log('Before then', getData());
+getData().then(data => console.log(data));
