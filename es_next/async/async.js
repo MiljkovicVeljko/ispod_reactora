@@ -94,19 +94,19 @@
 //   console.log(content);
 // }
 
-// let promiseObj = new Promise(function (resolve, reject) {
-//   let x = 0;
-//   if (x === 0) {
-//       resolve("Granted!");
-//   } else {
-//       reject("DECLINED!!!");
-//   }
-// });
-// promiseObj.then(function (value) {
-//   displayFunc(value);
-// }, function (error) {
-//   displayFunc(error);
-// });
+let promiseObj = new Promise((resolve, reject) => {
+  let x = 0;
+  if (x === 0) {
+      resolve("Granted!");
+  } else {
+      reject("DECLINED!!!");
+  }
+});
+promiseObj.then((value) => {
+  displayFunc(value);
+}, (error) => {
+  displayFunc(error);
+});
 
 // //
 
