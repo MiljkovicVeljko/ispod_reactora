@@ -22,6 +22,8 @@ const root = document.getElementById('root');
  * 
  * async function similar to new Promise()
  * await similar to then()
+ * 
+ * PRACTICE: wrote fetch example in async syntax (it's promise by default)
  */
 
 async function display(content) {
