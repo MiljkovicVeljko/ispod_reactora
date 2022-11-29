@@ -149,13 +149,24 @@
 async function displayFunc() {
   let promiseObj = new Promise(function (resolve, reject) {
       setTimeout(function () {
-          resolve("Was called after f****** 4 seconds!");
-      }, 4000);
+          // resolve("Was called after f****** 4 seconds!");
+          reject('eerororor')
+      }, 1000);
   });
-  console.log(await promiseObj);
+  console.log(await promiseObj.catch(e => e));
 }
 
-displayFunc();
+// let promiseObj = new Promise(function (resolve, reject) {
+//   setTimeout(function () {
+//       resolve("Was called after f****** 4 seconds!");
+//   }, 4000);
+// });
+// console.log(await promiseObj);
+// promiseObj.then(res => {
+//   console.log('res: ', res);
+// })
+
+// displayFunc();
 
 // "this is the start"
 // "this is just a message"

@@ -1,5 +1,46 @@
 const root = document.getElementById('root');
 
+/**
+ * ASYNC / Promise example
+ * 
+ * I how to handle success in asynchronous code?
+ * II how to handle error in asynchronous code?
+ * 
+ * with promise
+ * (I) then
+ * (II) catch - always last in chain (myPromise.then().then().catch())
+ * 
+ * with async
+ * (I) Use await to handle succeeded flow
+ * (II) Use try/catch to handle failed flow
+ *  - Remember async/await is just a promise, we can use catch after calling async function either (but stick to try/catch)
+ * 
+ * Simplification
+ * type    | success  | error
+ * promise | .then    | .catch
+ * async   | await    | try/catch
+ * 
+ * async function similar to new Promise()
+ * await similar to then()
+ */
+
+async function display(content) {
+  console.log(await content);
+}
+
+const futureData = fetch(`https://jsonplaceholder.typicode.com/todos/2`)
+
+console.log(futureData);
+display(futureData)
+// futureData.then(display).then(res => console.log(futureData))
+// .then(json => console.log(json))
+
+console.log('sync code here');
+
+root.addEventListener('load', futureData)
+
+// FETCH example
+
 function getPosts() {
   fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => response.json())
