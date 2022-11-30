@@ -27,19 +27,22 @@ const root = document.getElementById('root');
  */
 
 async function display(content) {
-  console.log(await content);
+  let res = await fetch(`https://jsonplaceholder.typicode.com/todos/2`)
+  let json = await res.json();
+
+  console.log(json)
 }
 
 const futureData = fetch(`https://jsonplaceholder.typicode.com/todos/2`)
 
-console.log(futureData);
-display(futureData)
+console.log('fetch',futureData);
+display()
 // futureData.then(display).then(res => console.log(futureData))
 // .then(json => console.log(json))
 
 console.log('sync code here');
 
-root.addEventListener('load', futureData)
+// root.addEventListener('load', futureData)
 
 // FETCH example
 
@@ -140,14 +143,14 @@ function deletePost() {
   //   });
   // }
   
-  // async function asyncCall() {
-  //   console.log('calling');
-  //   const result = await resolveAfter2Seconds();
-  //   console.log(result);
-  //   // expected output: "resolved"
-  // }
+  async function asyncCall() {
+    console.log('calling');
+    const result = await resolveAfter2Seconds();
+    console.log(result);
+    // expected output: "resolved"
+  }
   
-  // asyncCall();
+  asyncCall();
 
   // example 4
 

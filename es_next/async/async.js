@@ -94,19 +94,23 @@
 //   console.log(content);
 // }
 
-let promiseObj = new Promise((resolve, reject) => {
-  let x = 0;
-  if (x === 0) {
-      resolve("Granted!");
-  } else {
-      reject("DECLINED!!!");
-  }
-});
-promiseObj.then((value) => {
-  displayFunc(value);
-}, (error) => {
-  displayFunc(error);
-});
+// let promiseObj = new Promise((resolve, reject) => {
+//   let x = 0;
+//   if (x === 0) {
+//       setTimeout(() => {
+//         resolve("Granted!")
+//       }, 1000)
+//     } else {
+//     setTimeout(() => {
+//       reject("DECLINED!!!");
+//     }, 1000)
+//   }
+// });
+// promiseObj.then((value) => {
+//   displayFunc(value);
+// }, (error) => {
+//   displayFunc(error);
+// });
 
 // //
 
@@ -117,7 +121,7 @@ promiseObj.then((value) => {
 // let doFirst = new Promise((resolve, reject) => {
 //   setTimeout(() => {
 //     console.log('Do first.')
-
+//     throw new Error(`greska`)
 //     resolve()
 //   }, 500)
 // })
@@ -151,9 +155,10 @@ async function displayFunc() {
       setTimeout(function () {
           // resolve("Was called after f****** 4 seconds!");
           reject('eerororor')
+          // console.log('i am done');
       }, 1000);
   });
-  console.log(await promiseObj.catch(e => e));
+  console.log(await promiseObj.catch(err => console.error(err)));
 }
 
 // let promiseObj = new Promise(function (resolve, reject) {
@@ -161,12 +166,15 @@ async function displayFunc() {
 //       resolve("Was called after f****** 4 seconds!");
 //   }, 4000);
 // });
-// console.log(await promiseObj);
+// // console.log(await promiseObj);
 // promiseObj.then(res => {
 //   console.log('res: ', res);
 // })
-
-// displayFunc();
+// try {
+  displayFunc();
+// } catch (err) {
+//   console.error(err)
+// }
 
 // "this is the start"
 // "this is just a message"
