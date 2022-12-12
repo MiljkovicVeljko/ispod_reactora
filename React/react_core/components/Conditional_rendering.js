@@ -24,4 +24,9 @@
  *   )}
  * </div>
  * 
+ * Optionally, you can use && instead if you don't have else option
+ * 
+ * <div>
+      {isLoggedIn && <AdminPanel />}
+    </div>
  */
